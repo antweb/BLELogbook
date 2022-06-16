@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BLE Logbook"
-include ':app'
+include(":app")
