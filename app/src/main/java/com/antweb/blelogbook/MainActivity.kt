@@ -3,13 +3,13 @@ package com.antweb.blelogbook
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.antweb.blelogbook.start.StartScreen
+import com.antweb.blelogbook.start.StartScreenViewModel
 import com.antweb.blelogbook.ui.theme.BLELogbookTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,27 +17,26 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             BLELogbookTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                Navigator()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+fun Navigator() {
+    val navController = rememberNavController()
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    BLELogbookTheme {
-        Greeting("Android")
+    val navHandler = { route: String ->
+        navController.navigate(route)
+    }
+
+    return NavHost(navController = navController, startDestination = Routes.start) {
+        composable(Routes.start) {
+            val viewModel = viewModel<StartScreenViewModel>()
+            StartScreen(viewModel)
+        }
     }
 }
+
+typealias NavHandler = (route: String) -> Unit

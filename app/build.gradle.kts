@@ -4,6 +4,7 @@ plugins {
 }
 
 val composeVersion = "1.1.1"
+val navigationVersion = "2.4.2"
 
 android {
     compileSdk = 32
@@ -58,10 +59,12 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
     implementation("androidx.activity:activity-compose:1.4.0")
+    implementation("androidx.navigation:navigation-compose:$navigationVersion")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
+    androidTestImplementation("androidx.navigation:navigation-testing:$navigationVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 }
