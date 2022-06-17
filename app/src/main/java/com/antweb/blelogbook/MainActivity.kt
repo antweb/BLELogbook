@@ -14,7 +14,9 @@ import com.antweb.blelogbook.home.HomeViewModel
 import com.antweb.blelogbook.start.StartScreen
 import com.antweb.blelogbook.start.StartScreenViewModel
 import com.antweb.blelogbook.ui.theme.BLELogbookTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
