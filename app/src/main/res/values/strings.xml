@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BLE Logbook</string>
+
+    <string name="start_loading">Getting things ready…</string>
+    <string name="start_first_things_first">First things first</string>
+    <string name="start_permission_required">BLE Logbook needs access to your nearby devices to use your device\'s Bluetooth functionality.\nGrant the permission by clicking the button below to get started.</string>
+    <string name="start_grant_permission">Grant Permission</string>
+    <string name="start_open_app_settings">Open Settings</string>
 </resources>
