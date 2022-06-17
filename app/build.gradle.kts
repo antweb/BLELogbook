@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 val composeVersion = "1.1.1"
@@ -55,6 +58,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.8.0")
@@ -73,4 +80,8 @@ dependencies {
     androidTestImplementation("androidx.navigation:navigation-testing:$navigationVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+
+    implementation("com.google.dagger:hilt-android:2.38.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    kapt("com.google.dagger:hilt-android-compiler:2.38.1")
 }
