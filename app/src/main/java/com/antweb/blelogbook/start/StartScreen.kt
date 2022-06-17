@@ -13,20 +13,31 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
+import androidx.navigation.NavOptions
+import com.antweb.blelogbook.NavHandler
 import com.antweb.blelogbook.R
+import com.antweb.blelogbook.Routes
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberPermissionState
 
 
 @Composable
-fun StartScreen(model: StartScreenViewModel) {
+fun StartScreen(model: StartScreenViewModel, navHandler: NavHandler) {
     Scaffold(
         content = {
             Column(
                 modifier = Modifier.padding(24.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                PermissionCheck()
+                PermissionCheck(onSuccess = {
+                    val options = NavOptions.Builder()
+                        .setPopUpTo(
+                            route = Routes.start,
+                            inclusive = true,
+                        ).build()
+
+                    navHandler(Routes.home, options)
+                })
             }
         }
     )
@@ -34,7 +45,7 @@ fun StartScreen(model: StartScreenViewModel) {
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
-private fun PermissionCheck() {
+private fun PermissionCheck(onSuccess: () -> Unit) {
     val bluetoothPermissionState = rememberPermissionState(
         android.Manifest.permission.BLUETOOTH_CONNECT
     )
@@ -43,6 +54,11 @@ private fun PermissionCheck() {
 
     if (bluetoothPermissionState.hasPermission) {
         Text(context.getString(R.string.start_loading))
+
+        // TODO: Navigate automatically
+        Button(onClick = { onSuccess() }) {
+            Text(text = "Continue")
+        }
     } else {
         Column(
             modifier = Modifier.padding(top = 176.dp),
