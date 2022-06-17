@@ -6,6 +6,10 @@ plugins {
 val composeVersion = "1.1.1"
 val navigationVersion = "2.4.2"
 
+// Must match compose version
+// See https://google.github.io/accompanist/#compose-versions
+val accompanistVersion = "0.23.1"
+
 android {
     compileSdk = 32
 
@@ -60,6 +64,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
     implementation("androidx.activity:activity-compose:1.4.0")
     implementation("androidx.navigation:navigation-compose:$navigationVersion")
+    implementation("com.google.accompanist:accompanist-permissions:$accompanistVersion")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
