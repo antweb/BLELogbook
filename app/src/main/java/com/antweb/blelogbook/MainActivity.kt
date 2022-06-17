@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.antweb.blelogbook.home.HomeScreen
+import com.antweb.blelogbook.home.HomeViewModel
 import com.antweb.blelogbook.start.StartScreen
 import com.antweb.blelogbook.start.StartScreenViewModel
 import com.antweb.blelogbook.ui.theme.BLELogbookTheme
@@ -40,7 +41,8 @@ fun Navigator() {
         }
 
         composable(Routes.home) {
-            HomeScreen()
+            val viewModel = viewModel<HomeViewModel>()
+            HomeScreen(viewModel)
         }
     }
 }

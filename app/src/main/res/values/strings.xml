@@ -9,4 +9,8 @@
 
     <string name="home_bottom_nav_overview">Overview</string>
     <string name="home_bottom_nav_scan">Scan</string>
+
+    <string name="home_overview_title">Overview</string>
+
+    <string name="home_scan_title">Overview</string>
 </resources>

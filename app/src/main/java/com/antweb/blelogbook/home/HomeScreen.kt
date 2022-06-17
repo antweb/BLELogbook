@@ -2,6 +2,7 @@ package com.antweb.blelogbook.home
 
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -14,7 +15,7 @@ import com.antweb.blelogbook.home.overview.OverviewScreen
 import com.antweb.blelogbook.home.scan.ScanScreen
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(model: HomeViewModel) {
     val navController = rememberNavController()
 
     val items = listOf(
@@ -22,11 +23,20 @@ fun HomeScreen() {
         Screen.Scan,
     )
 
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navBackStackEntry?.destination
+
+    val onTitleChange = { title: String -> model.setTitle(title) }
+
     Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(model.title.collectAsState().value) }
+            )
+        },
         bottomBar = {
             BottomNavigation {
-                val navBackStackEntry by navController.currentBackStackEntryAsState()
-                val currentDestination = navBackStackEntry?.destination
+
 
                 items.forEach { screen ->
                     BottomNavigationItem(
@@ -48,8 +58,8 @@ fun HomeScreen() {
         },
         content = {
             NavHost(navController = navController, startDestination = Screen.Overview.route) {
-                composable(Screen.Overview.route) { OverviewScreen() }
-                composable(Screen.Scan.route) { ScanScreen() }
+                composable(Screen.Overview.route) { OverviewScreen(onTitleChange) }
+                composable(Screen.Scan.route) { ScanScreen(onTitleChange) }
             }
         }
     )
