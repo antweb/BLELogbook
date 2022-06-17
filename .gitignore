@@ -9,6 +9,7 @@
 /.idea/assetWizardSettings.xml
 /.idea/kotlinScripting.xml
 /.idea/vcs.xml
+/.idea/inspectionProfiles/*
 .DS_Store
 /build
 /captures
