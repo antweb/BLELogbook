@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -12,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.antweb.blelogbook.home.overview.OverviewScreen
+import com.antweb.blelogbook.home.overview.OverviewViewModel
 import com.antweb.blelogbook.home.scan.ScanScreen
 
 @Composable
@@ -58,7 +60,10 @@ fun HomeScreen(model: HomeViewModel) {
         },
         content = {
             NavHost(navController = navController, startDestination = Screen.Overview.route) {
-                composable(Screen.Overview.route) { OverviewScreen(onTitleChange) }
+                composable(Screen.Overview.route) {
+                    OverviewScreen(hiltViewModel(), onTitleChange)
+                }
+
                 composable(Screen.Scan.route) { ScanScreen(onTitleChange) }
             }
         }

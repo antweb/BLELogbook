@@ -11,6 +11,14 @@
     <string name="home_bottom_nav_scan">Scan</string>
 
     <string name="home_overview_title">Overview</string>
+    <string name="home_overview_adapter_status">Adapter status</string>
+    <string name="home_overview_adapter_enabled_status">Status</string>
+    <string name="home_overview_adapter_enabled">Enabled</string>
+    <string name="home_overview_adapter_disabled">Disabled</string>
+    <string name="home_overview_adapter_name">Name</string>
+    <string name="home_overview_discovering">Discovering</string>
+    <string name="home_overview_yes">Yes</string>
+    <string name="home_overview_no">No</string>
 
     <string name="home_scan_title">Overview</string>
 </resources>
