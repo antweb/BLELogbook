@@ -23,7 +23,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.antweb.blelogbook.TestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -78,6 +78,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
     androidTestImplementation("androidx.navigation:navigation-testing:$navigationVersion")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.40.1")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.40.1")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
