@@ -18,7 +18,7 @@ import com.antweb.blelogbook.NavHandler
 import com.antweb.blelogbook.R
 import com.antweb.blelogbook.Routes
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import com.google.accompanist.permissions.rememberPermissionState
+import com.google.accompanist.permissions.rememberMultiplePermissionsState
 
 
 @Composable
@@ -46,13 +46,16 @@ fun StartScreen(model: StartScreenViewModel, navHandler: NavHandler) {
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
 private fun PermissionCheck(onSuccess: () -> Unit) {
-    val bluetoothPermissionState = rememberPermissionState(
-        android.Manifest.permission.BLUETOOTH_CONNECT
+    val bluetoothPermissionState = rememberMultiplePermissionsState(
+        listOf(
+            android.Manifest.permission.BLUETOOTH_CONNECT,
+            android.Manifest.permission.BLUETOOTH_SCAN,
+        )
     )
 
     val context = LocalContext.current
 
-    if (bluetoothPermissionState.hasPermission) {
+    if (bluetoothPermissionState.allPermissionsGranted) {
         Text(context.getString(R.string.start_loading))
 
         // TODO: Navigate automatically
@@ -79,7 +82,7 @@ private fun PermissionCheck(onSuccess: () -> Unit) {
                 modifier = Modifier.padding(top = 24.dp),
                 enabled = !bluetoothPermissionState.shouldShowRationale,
                 onClick = {
-                    bluetoothPermissionState.launchPermissionRequest()
+                    bluetoothPermissionState.launchMultiplePermissionRequest()
                 },
             ) {
                 Text(
