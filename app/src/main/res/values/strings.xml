@@ -20,5 +20,8 @@
     <string name="home_overview_yes">Yes</string>
     <string name="home_overview_no">No</string>
 
-    <string name="home_scan_title">Overview</string>
+    <string name="home_scan_title">Scan</string>
+    <string name="home_scan_unknown">Unknown</string>
+    <string name="home_scan_start_scan">Start Scan</string>
+    <string name="home_scan_stop_scan">Stop Scan</string>
 </resources>

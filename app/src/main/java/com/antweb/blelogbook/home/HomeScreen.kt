@@ -64,7 +64,9 @@ fun HomeScreen(model: HomeViewModel) {
                     OverviewScreen(hiltViewModel(), onTitleChange)
                 }
 
-                composable(Screen.Scan.route) { ScanScreen(onTitleChange) }
+                composable(Screen.Scan.route) {
+                    ScanScreen(hiltViewModel(), onTitleChange)
+                }
             }
         }
     )
