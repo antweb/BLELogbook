@@ -1,5 +1,6 @@
 package com.antweb.blelogbook.bluetooth
 
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothManager
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -13,8 +14,9 @@ class AdapterServiceImpl @Inject constructor(
 
     override fun isEnabled() = manager.adapter.isEnabled
 
+    @SuppressLint("MissingPermission")
     override fun isDiscovering() = manager.adapter.isDiscovering
 
+    @SuppressLint("MissingPermission")
     override fun getAdapterName() = manager.adapter.name
-    
 }
