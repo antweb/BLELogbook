@@ -18,5 +18,5 @@ class AdapterServiceImpl @Inject constructor(
     override fun isDiscovering() = manager.adapter.isDiscovering
 
     @SuppressLint("MissingPermission")
-    override fun getAdapterName() = manager.adapter.name
+    override fun getAdapterName() = manager.adapter.name ?: ""
 }
