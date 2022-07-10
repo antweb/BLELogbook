@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.home.overview
+package com.antweb.blelogbook.feature.home.overview
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

@@ -1,9 +1,9 @@
-package com.antweb.blelogbook.home.scan
+package com.antweb.blelogbook.feature.home.scan
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
-import com.antweb.blelogbook.bluetooth.ScanService
-import com.antweb.blelogbook.bluetooth.model.ScannedDevice
+import com.antweb.blelogbook.core.bluetooth.ScanService
+import com.antweb.blelogbook.core.bluetooth.model.ScannedDevice
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

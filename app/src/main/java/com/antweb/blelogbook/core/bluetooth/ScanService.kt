@@ -1,6 +1,6 @@
-package com.antweb.blelogbook.bluetooth
+package com.antweb.blelogbook.core.bluetooth
 
-import com.antweb.blelogbook.bluetooth.model.ScannedDevice
+import com.antweb.blelogbook.core.bluetooth.model.ScannedDevice
 
 interface ScanService {
 

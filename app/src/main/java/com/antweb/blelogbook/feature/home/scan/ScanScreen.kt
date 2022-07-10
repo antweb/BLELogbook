@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.home.scan
+package com.antweb.blelogbook.feature.home.scan
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.res.stringResource
 import com.antweb.blelogbook.R
-import com.antweb.blelogbook.bluetooth.model.ScannedDevice
+import com.antweb.blelogbook.core.bluetooth.model.ScannedDevice
 
 @Composable
 fun ScanScreen(model: ScanViewModel, setTitle: (String) -> Unit) {

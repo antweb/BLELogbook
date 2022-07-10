@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.bluetooth.model
+package com.antweb.blelogbook.core.bluetooth.model
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice

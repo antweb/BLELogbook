@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.home
+package com.antweb.blelogbook.feature.home
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

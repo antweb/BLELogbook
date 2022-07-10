@@ -1,18 +1,18 @@
-package com.antweb.blelogbook.home
+package com.antweb.blelogbook.feature.home
 
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import com.antweb.blelogbook.bluetooth.ConnectedAdapterServiceFake
-import com.antweb.blelogbook.home.overview.OverviewScreen
-import com.antweb.blelogbook.home.overview.OverviewViewModel
+import com.antweb.blelogbook.core.bluetooth.ConnectedAdapterServiceFake
+import com.antweb.blelogbook.feature.home.overview.OverviewScreen
+import com.antweb.blelogbook.feature.home.overview.OverviewViewModel
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import com.antweb.blelogbook.R
-import com.antweb.blelogbook.bluetooth.DisconnectedAdapterServiceFake
+import com.antweb.blelogbook.core.bluetooth.DisconnectedAdapterServiceFake
 
 
 @HiltAndroidTest

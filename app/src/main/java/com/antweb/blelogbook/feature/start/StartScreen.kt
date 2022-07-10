@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.start
+package com.antweb.blelogbook.feature.start
 
 import android.content.Intent
 import android.net.Uri

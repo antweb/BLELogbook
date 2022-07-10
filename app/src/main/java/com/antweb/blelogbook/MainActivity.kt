@@ -9,10 +9,10 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.antweb.blelogbook.home.HomeScreen
-import com.antweb.blelogbook.home.HomeViewModel
-import com.antweb.blelogbook.start.StartScreen
-import com.antweb.blelogbook.start.StartScreenViewModel
+import com.antweb.blelogbook.feature.home.HomeScreen
+import com.antweb.blelogbook.feature.home.HomeViewModel
+import com.antweb.blelogbook.feature.start.StartScreen
+import com.antweb.blelogbook.feature.start.StartScreenViewModel
 import com.antweb.blelogbook.ui.theme.BLELogbookTheme
 import dagger.hilt.android.AndroidEntryPoint
 

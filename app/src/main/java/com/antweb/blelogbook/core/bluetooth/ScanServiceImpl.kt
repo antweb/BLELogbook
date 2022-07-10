@@ -1,11 +1,11 @@
-package com.antweb.blelogbook.bluetooth
+package com.antweb.blelogbook.core.bluetooth
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothManager
 import android.bluetooth.le.ScanCallback
 import android.bluetooth.le.ScanResult
 import android.content.Context
-import com.antweb.blelogbook.bluetooth.model.ScannedDevice
+import com.antweb.blelogbook.core.bluetooth.model.ScannedDevice
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

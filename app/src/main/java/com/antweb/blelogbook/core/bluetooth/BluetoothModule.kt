@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.bluetooth
+package com.antweb.blelogbook.core.bluetooth
 
 import dagger.Binds
 import dagger.Module

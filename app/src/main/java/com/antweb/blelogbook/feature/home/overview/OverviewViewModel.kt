@@ -1,7 +1,7 @@
-package com.antweb.blelogbook.home.overview
+package com.antweb.blelogbook.feature.home.overview
 
 import androidx.lifecycle.ViewModel
-import com.antweb.blelogbook.bluetooth.AdapterService
+import com.antweb.blelogbook.core.bluetooth.AdapterService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

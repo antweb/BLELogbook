@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.home
+package com.antweb.blelogbook.feature.home
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons

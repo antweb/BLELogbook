@@ -1,4 +1,4 @@
-package com.antweb.blelogbook.home
+package com.antweb.blelogbook.feature.home
 
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -12,9 +12,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.antweb.blelogbook.home.overview.OverviewScreen
-import com.antweb.blelogbook.home.overview.OverviewViewModel
-import com.antweb.blelogbook.home.scan.ScanScreen
+import com.antweb.blelogbook.feature.home.overview.OverviewScreen
+import com.antweb.blelogbook.feature.home.scan.ScanScreen
 
 @Composable
 fun HomeScreen(model: HomeViewModel) {
