@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 class HomeViewModel : ViewModel() {
-    private val _title = MutableStateFlow("");
+    private val _title = MutableStateFlow("")
 
     val title: StateFlow<String> = _title
 
